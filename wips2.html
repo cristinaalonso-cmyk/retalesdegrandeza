@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corte de tiza y carbón | Galería de Proceso</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="inner-page">
+
+<header class="main-header standalone-header">
+    <div class="header-left">
+        <a href="https://www.instagram.com/ccatroxx/" target="_blank" class="brand-instagram">@ccatroxx</a>
+    </div>
+    <nav class="header-center">
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link active">Inicio</a></li>
+            <li class="dropdown">
+                <a href="#" class="nav-link">Wips <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="wips.html">Retales de Grandeza</a></li>
+                    <li><a href="wips2.html">Corte de tiza y carbón</a></li>
+                </ul>
+            </li>
+            <li><a href="shop.html" class="nav-link">Tienda</a></li>
+        </ul>
+    </nav>
+    <div class="header-right">
+        <div class="social-links-top">
+            <a href="#" id="easterEggTrigger" title="Secretos de Palacio" style="margin-right: 15px; color: #bcaaa4; transition: transform 0.3s;"><i class="fas fa-key"></i></a>
+            <a href="https://www.instagram.com/ccatroxx/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="mailto:info@retalesdegrandeza.com" title="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+    </div>
+</header>
+
+<main class="wips-page-container" style="padding-top: 120px; padding-bottom: 60px;">
+    <div class="wips-title-section" style="text-align: center; margin-bottom: 40px;">
+        <h1 class="wips-main-title" style="font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: #1a1512;">Corte de tiza y carbón</h1>
+        <div class="baroque-accent-line"></div>
+    </div>
+
+    <section class="gallery-section compact-gallery">
+        <div class="masonry-gallery">
+            <div class="gallery-item size-v-large"><img src="wip-corte1.jpg" alt="Wip" class="gallery-img"></div>
+            <div class="gallery-item size-horizontal"><img src="wip-corte2.jpg" alt="Wip" class="gallery-img"></div>
+            <div class="gallery-item"><img src="wip-corte3.jpg" alt="Wip" class="gallery-img"></div>
+            <div class="gallery-item size-big"><img src="wip-corte4.jpg" alt="Wip" class="gallery-img"></div>
+            <div class="gallery-item"><img src="wip-corte5.jpg" alt="Wip" class="gallery-img"></div>
+            <div class="gallery-item size-horizontal"><img src="wip-corte6.jpg" alt="Wip" class="gallery-img"></div>
+            <div class="gallery-item size-small"><img src="wip-corte7.jpg" alt="Wip" class="gallery-img"></div>
+        </div>
+    </section>
+</main>
+
+<footer class="main-footer">
+    <div class="footer-legal-zone">
+        <p class="copyright-notice">&copy; 2026 Retales de Grandeza. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<div id="easterEggModal" class="egg-modal">
+    <div class="egg-modal-content">
+        <span class="close-egg">&times;</span>
+        <div class="egg-parchment">
+            <div class="baroque-ornament-mini"></div>
+            <h3 class="egg-title">Interceptado en los pasillos de la Corte...</h3>
+            <p class="egg-text">«...Las cartas que cruzan la frontera no mienten. Las sombras se alargan sobre Madrid y los días de esta corte están contados. Se rumorea en los pasillos más oscuros de palacio que un rey extranjero cruzará los Pirineos para reclamar el trono de España. Un nuevo orden está por nacer, y quienes hoy visten seda bien podrían acabar vistiendo ceniza...»</p>
+            <div class="egg-signature">— Un informante anónimo.</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const eggTrigger = document.getElementById('easterEggTrigger');
+    const eggModal = document.getElementById('easterEggModal');
+    const closeEgg = document.querySelector('.close-egg');
+
+    eggTrigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        eggModal.classList.add('is-open');
+    });
+    closeEgg.addEventListener('click', () => eggModal.classList.remove('is-open'));
+    eggModal.addEventListener('click', (e) => { if (e.target === eggModal) eggModal.classList.remove('is-open'); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') eggModal.classList.remove('is-open'); });
+</script>
+</body>
+</html>

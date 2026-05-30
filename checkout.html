@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procesar Compra | Retales de Grandeza</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="inner-page">
+
+<header class="main-header standalone-header">
+    <div class="header-left">
+        <a href="https://www.instagram.com/ccatroxx/" target="_blank" class="brand-instagram">@ccatroxx</a>
+    </div>
+    <nav class="header-center">
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Inicio</a></li>
+            <li class="dropdown">
+                <a href="#" class="nav-link">Wips <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="wips.html">Retales de Grandeza</a></li>
+                    <li><a href="wips2.html">Corte de tiza y carbón</a></li>
+                </ul>
+            </li>
+            <li><a href="shop.html" class="nav-link">Tienda</a></li>
+        </ul>
+    </nav>
+    <div class="header-right">
+        <div class="social-links-top">
+            <a href="https://www.instagram.com/ccatroxx/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:info@retalesdegrandeza.com" title="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+    </div>
+</header>
+
+<main class="wips-page-container">
+    <div class="checkout-split-layout">
+
+        <div class="form-pane" style="box-shadow: none;">
+            <div class="form-header-baroque">
+                <h3>Detalles del Envío</h3>
+                <p>Introduce tus datos para formalizar la adquisición</p>
+                <div class="form-title-separator"></div>
+            </div>
+
+            <form id="checkoutForm" class="baroque-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="checkoutName">Nombre y Apellidos</label>
+                        <input type="text" id="checkoutName" required placeholder="Ej. Mateo de los Santos">
+                    </div>
+                </div>
+                <div class="form-row duo">
+                    <div class="form-group">
+                        <label for="checkoutEmail">Correo Electrónico</label>
+                        <input type="email" id="checkoutEmail" required placeholder="nombre@correo.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="checkoutPhone">Teléfono de Contacto</label>
+                        <input type="tel" id="checkoutPhone" required placeholder="+34 600 000 000">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="checkoutAddress">Dirección Postal de Entrega</label>
+                        <input type="text" id="checkoutAddress" required placeholder="Calle, Número, Piso, Código Postal, Ciudad">
+                    </div>
+                </div>
+
+                <div class="form-row coupon-wrapper">
+                    <div class="form-group">
+                        <label for="couponCode">¿Dispones de un salvoconducto / Cupón?</label>
+                        <div class="coupon-field-group">
+                            <input type="text" id="couponCode" placeholder="Introduce tu código de descuento">
+                            <button type="button" id="applyCouponBtn" class="btn-coupon-apply">Aplicar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="checkoutPayment">Método de Pago</label>
+                        <select id="checkoutPayment" required>
+                            <option value="" disabled selected>Selecciona cómo deseas pagar...</option>
+                            <option value="bizum">Bizum inmediato</option>
+                            <option value="card">Tarjeta de Crédito / Débito</option>
+                            <option value="paypal">PayPal Seguro</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn-baroque-submit">Proceder al Pago Seguro</button>
+            </form>
+        </div>
+
+        <div class="checkout-summary-pane">
+            <div class="summary-sticky-box">
+                <h3 class="summary-title">Resumen del Pedido</h3>
+
+                <div id="checkoutProductsList"></div>
+
+                <div class="summary-totals-table">
+                    <div class="total-row">
+                        <span>Subtotal</span>
+                        <span id="checkoutSubtotal">0,00€</span>
+                    </div>
+                    <div class="total-row" id="discountRow" style="display: none; color: var(--color-accent-gold);">
+                        <span>Descuento (Cupón)</span>
+                        <span id="discountValue">-0,00€</span>
+                    </div>
+                    <div class="total-row">
+                        <span>Gastos de envío</span>
+                        <span style="font-style: italic; color: var(--color-muted-clay);">Gratis</span>
+                    </div>
+                    <div class="total-row final-total">
+                        <span>Total</span>
+                        <strong id="finalPriceDisplay">0,00€</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<div id="customAlertModal" class="custom-alert-overlay">
+    <div class="custom-alert-box">
+        <div class="baroque-ornament-mini" style="margin-bottom: 0.5rem;"></div>
+        <h4 id="alertTitle" class="alert-box-title">Notificación</h4>
+        <p id="alertMessage" class="alert-box-text">Mensaje del sistema.</p>
+        <button type="button" id="closeAlertBtn" class="btn-cookie-accept" style="margin-top: 1rem; padding: 0.6rem 2rem;">Entendido</button>
+    </div>
+</div>
+
+<script>
+    let cart = JSON.parse(localStorage.getItem('cart_palacio')) || {};
+    let runningTotal = 0;
+    let discount = 0;
+
+    function buildCheckoutSummary() {
+        const prodContainer = document.getElementById('checkoutProductsList');
+        prodContainer.innerHTML = '';
+        let keys = Object.keys(cart);
+        runningTotal = 0;
+
+        if(keys.length === 0) {
+            prodContainer.innerHTML = '<p style="color:var(--color-muted-clay)">No hay artículos en la cesta.</p>';
+            return;
+        }
+
+        keys.forEach(key => {
+            const item = cart[key];
+            const itemTotal = item.price * item.qty;
+            runningTotal += itemTotal;
+
+            const div = document.createElement('div');
+            div.className = 'summary-product-item';
+            div.style.marginBottom = '15px';
+            div.innerHTML = `
+                <img src="${item.img || 'mockup-libro.jpg'}" alt="${item.name}" class="summary-thumb">
+                <div class="summary-product-details">
+                    <h4>${item.name}</h4>
+                    <p>Cantidad: ${item.qty}</p>
+                </div>
+                <span class="summary-item-price">${itemTotal.toFixed(2)}€</span>
+            `;
+            prodContainer.appendChild(div);
+        });
+
+        updateTotalsDisplay();
+    }
+
+    function updateTotalsDisplay() {
+        document.getElementById('checkoutSubtotal').textContent = runningTotal.toFixed(2) + '€';
+        let finalPrice = runningTotal - discount;
+        if(finalPrice < 0) finalPrice = 0;
+        document.getElementById('finalPriceDisplay').textContent = finalPrice.toFixed(2) + '€';
+    }
+
+    document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Vaciar el carrito al completar formalmente el proceso
+        localStorage.removeItem('cart_palacio');
+        window.location.href = 'confirmacion.html';
+    });
+
+    const alertModal = document.getElementById('customAlertModal');
+    const alertTitle = document.getElementById('alertTitle');
+    const alertMessage = document.getElementById('alertMessage');
+
+    function showCustomAlert(title, message) {
+        alertTitle.textContent = title;
+        alertMessage.textContent = message;
+        alertModal.classList.add('is-visible');
+    }
+
+    document.getElementById('closeAlertBtn').addEventListener('click', () => {
+        alertModal.classList.remove('is-visible');
+    });
+
+    document.getElementById('applyCouponBtn').addEventListener('click', () => {
+        const code = document.getElementById('couponCode').value.trim().toUpperCase();
+
+        if(code === "CORTE") {
+            discount = 4.90;
+            document.getElementById('discountRow').style.display = 'flex';
+            document.getElementById('discountValue').textContent = '-4,90€';
+            updateTotalsDisplay();
+            showCustomAlert("Salvoconducto Aceptado", "El cupón se ha aplicado correctamente. Se han rebajado 4,90€ de tu orden.");
+        } else if(code === "") {
+            showCustomAlert("Atención", "Por favor, introduce un código antes de aplicar.");
+        } else {
+            showCustomAlert("Código Inválido", "El sello o cupón introducido no corresponde a ningún beneficio activo en la Corte.");
+        }
+    });
+
+    document.addEventListener('DOMContentLoaded', buildCheckoutSummary);
+</script>
+</body>
+</html>

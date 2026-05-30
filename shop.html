@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Oficial | Retales de Grandeza</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .shop-body {
+            background-color: var(--bg-pergamino);
+            color: var(--color-text-cohesive);
+            font-family: var(--font-serif-body);
+        }
+        .shop-title-zone {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .shop-title {
+            font-family: var(--font-serif-classic);
+            font-size: 3rem;
+            color: var(--color-baroque-dark);
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+            font-weight: 300;
+        }
+        .shop-subtitle {
+            font-family: var(--font-sans-clean);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-muted-clay);
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        .product-card {
+            background: #fff;
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            padding: 6px;
+            overflow: hidden;
+            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease;
+            position: relative;
+        }
+        .product-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(30, 23, 20, 0.08);
+        }
+        .product-img-wrapper {
+            width: 100%;
+            height: 320px;
+            overflow: hidden;
+            background: var(--bg-pergamino);
+            position: relative;
+        }
+        .product-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .product-card:hover .product-img-wrapper img {
+            transform: scale(1.05);
+        }
+        .product-info {
+            padding: 20px 10px 10px 10px;
+            text-align: center;
+        }
+        .prod-title {
+            font-family: var(--font-serif-classic);
+            font-size: 1.4rem;
+            color: var(--color-baroque-dark);
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+        .prod-size-badge {
+            display: inline-block;
+            font-family: var(--font-sans-clean);
+            font-size: 0.75rem;
+            background: var(--bg-cocina-warm);
+            color: var(--color-text-cohesive);
+            padding: 3px 8px;
+            border-radius: 2px;
+            margin-bottom: 12px;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+        .prod-price {
+            font-family: var(--font-serif-classic);
+            font-size: 1.5rem;
+            color: var(--color-accent-gold);
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        .purchase-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .qty-selector {
+            display: flex;
+            align-items: center;
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            background: #fff;
+        }
+        .qty-btn {
+            background: none;
+            border: none;
+            width: 30px;
+            height: 35px;
+            cursor: pointer;
+            color: var(--color-baroque-dark);
+            font-size: 1rem;
+            transition: background 0.2s;
+        }
+        .qty-btn:hover {
+            background: var(--bg-cocina-warm);
+        }
+        .qty-input {
+            width: 35px;
+            text-align: center;
+            border: none;
+            border-left: 1px solid rgba(197, 160, 89, 0.3);
+            border-right: 1px solid rgba(197, 160, 89, 0.3);
+            height: 35px;
+            font-family: var(--font-sans-clean);
+            font-size: 0.9rem;
+            color: var(--color-baroque-dark);
+        }
+        .btn-add-cart {
+            background: var(--color-baroque-dark);
+            color: var(--bg-pergamino);
+            border: 1px solid var(--color-baroque-dark);
+            padding: 0 15px;
+            height: 35px;
+            font-family: var(--font-sans-clean);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-add-cart:hover {
+            background: var(--bg-pergamino);
+            color: var(--color-baroque-dark);
+        }
+        .header-cart-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-right: 15px;
+        }
+        .header-cart-link {
+            color: #bcaaa4;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+        .header-cart-link:hover {
+            color: var(--color-accent-gold);
+        }
+        .header-cart-badge {
+            position: absolute;
+            top: -7px;
+            right: -10px;
+            background: var(--color-accent-gold);
+            color: var(--color-baroque-dark);
+            font-family: var(--font-sans-clean);
+            font-size: 0.65rem;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="shop-body inner-page">
+
+<header class="main-header standalone-header">
+    <div class="header-left">
+        <a href="https://www.instagram.com/ccatroxx/" target="_blank" class="brand-instagram">@ccatroxx</a>
+    </div>
+    <nav class="header-center">
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Inicio</a></li>
+            <li class="dropdown">
+                <a href="#" class="nav-link">Wips <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="wips.html">Retales de Grandeza</a></li>
+                    <li><a href="wips2.html">Corte de tiza y carbón</a></li>
+                </ul>
+            </li>
+            <li><a href="shop.html" class="nav-link active">Tienda</a></li>
+        </ul>
+    </nav>
+    <div class="header-right">
+        <div class="social-links-top">
+            <a href="#" id="easterEggTrigger" title="Secretos de Palacio" style="margin-right: 15px; color: #bcaaa4; transition: transform 0.3s;"><i class="fas fa-key"></i></a>
+
+            <div class="header-cart-wrapper">
+                <a href="carrito.html" class="header-cart-link" title="Ver mi Bolsa de Compra">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="header-cart-badge" id="headerCartCount">0</span>
+                </a>
+            </div>
+
+            <a href="https://www.instagram.com/ccatroxx/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="mailto:info@retalesdegrandeza.com" title="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+    </div>
+</header>
+
+<main class="wips-page-container">
+    <div class="shop-title-zone">
+        <h1 class="shop-title">Góndola de Mercaderías</h1>
+        <p class="shop-subtitle">Adquiere la obra y los prints oficiales del universo ccatroxx</p>
+        <div class="baroque-accent-line"></div>
+    </div>
+
+    <div class="products-grid">
+        <div class="product-card" data-id="libro" data-name="Libro: Retales de Grandeza" data-price="24.90" data-img="mockup-libro.jpg">
+            <div class="product-img-wrapper">
+                <img src="mockup-libro.jpg" alt="Libro Retales de Grandeza">
+            </div>
+            <div class="product-info">
+                <h3 class="prod-title">Novela Ilustrada Especial</h3>
+                <span class="prod-size-badge">Tapa Dura</span>
+                <div class="prod-price">24,90€</div>
+                <div class="purchase-controls">
+                    <div class="qty-selector">
+                        <button class="qty-btn minus-btn">-</button>
+                        <input type="text" class="qty-input" value="1" readonly>
+                        <button class="qty-btn plus-btn">+</button>
+                    </div>
+                    <button class="btn-add-cart"><i class="fas fa-shopping-basket"></i> Añadir</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card" data-id="print-a5" data-name="Art Print: Grabado de Palacio (A5)" data-price="4.00" data-img="ilustracion-libro1.jpg">
+            <div class="product-img-wrapper">
+                <img src="ilustracion-libro1.jpg" alt="Print A5">
+            </div>
+            <div class="product-info">
+                <h3 class="prod-title">Art Print: Colección Carboncillo</h3>
+                <span class="prod-size-badge">Tamaño A5</span>
+                <div class="prod-price">4,00€</div>
+                <div class="purchase-controls">
+                    <div class="qty-selector">
+                        <button class="qty-btn minus-btn">-</button>
+                        <input type="text" class="qty-input" value="1" readonly>
+                        <button class="qty-btn plus-btn">+</button>
+                    </div>
+                    <button class="btn-add-cart"><i class="fas fa-shopping-basket"></i> Añadir</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card" data-id="print-a4" data-name="Art Print: Retrato de Mateo (A4)" data-price="10.00" data-img="concept-art1.jpg">
+            <div class="product-img-wrapper">
+                <img src="concept-art1.jpg" alt="Print A4">
+            </div>
+            <div class="product-info">
+                <h3 class="prod-title">Art Print: Estudio de Personaje</h3>
+                <span class="prod-size-badge">Tamaño A4</span>
+                <div class="prod-price">10,00€</div>
+                <div class="purchase-controls">
+                    <div class="qty-selector">
+                        <button class="qty-btn minus-btn">-</button>
+                        <input type="text" class="qty-input" value="1" readonly>
+                        <button class="qty-btn plus-btn">+</button>
+                    </div>
+                    <button class="btn-add-cart"><i class="fas fa-shopping-basket"></i> Añadir</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card" data-id="print-a3" data-name="Art Print: Panorama de la Corte (A3)" data-price="18.00" data-img="ilustracion-libro2.jpg">
+            <div class="product-img-wrapper">
+                <img src="ilustracion-libro2.jpg" alt="Print A3">
+            </div>
+            <div class="product-info">
+                <h3 class="prod-title">Art Print: Escenario Barroco</h3>
+                <span class="prod-size-badge">Tamaño A3</span>
+                <div class="prod-price">18,00€</div>
+                <div class="purchase-controls">
+                    <div class="qty-selector">
+                        <button class="qty-btn minus-btn">-</button>
+                        <input type="text" class="qty-input" value="1" readonly>
+                        <button class="qty-btn plus-btn">+</button>
+                    </div>
+                    <button class="btn-add-cart"><i class="fas fa-shopping-basket"></i> Añadir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="main-footer">
+    <div class="footer-legal-zone">
+        <p class="copyright-notice">&copy; 2026 Retales de Grandeza. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<div id="easterEggModal" class="egg-modal">
+    <div class="egg-modal-content">
+        <span class="close-egg">&times;</span>
+        <div class="egg-parchment">
+            <div class="baroque-ornament-mini"></div>
+            <h3 class="egg-title">Interceptado en los pasillos de la Corte...</h3>
+            <p class="egg-text">«...Las cartas que cruzan la frontera no mienten. Las sombras se alargan sobre Madrid y los días de esta corte están contados. Se rumorea en los pasillos más oscuros de palacio que un rey extranjero cruzará los Pirineos para reclamar el trono de España. Un nuevo orden está por nacer, y quienes hoy visten seda bien podrían acabar vistiendo ceniza...»</p>
+            <div class="egg-signature">— Un informante anónimo.</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let cart = JSON.parse(localStorage.getItem('cart_palacio')) || {};
+    updateHeaderBadge();
+
+    document.querySelectorAll('.product-card').forEach(card => {
+        const minus = card.querySelector('.minus-btn');
+        const plus = card.querySelector('.plus-btn');
+        const input = card.querySelector('.qty-input');
+        const addBtn = card.querySelector('.btn-add-cart');
+
+        minus.addEventListener('click', () => {
+            let val = parseInt(input.value);
+            if(val > 1) input.value = val - 1;
+        });
+
+        plus.addEventListener('click', () => {
+            let val = parseInt(input.value);
+            input.value = val + 1;
+        });
+
+        addBtn.addEventListener('click', () => {
+            const id = card.getAttribute('data-id');
+            const name = card.getAttribute('data-name');
+            const price = parseFloat(card.getAttribute('data-price'));
+            const img = card.getAttribute('data-img');
+            const qty = parseInt(input.value);
+
+            if(cart[id]) {
+                cart[id].qty += qty;
+            } else {
+                cart[id] = { name: name, price: price, qty: qty, img: img };
+            }
+            input.value = 1;
+
+            localStorage.setItem('cart_palacio', JSON.stringify(cart));
+            updateHeaderBadge();
+            window.location.href = 'carrito.html';
+        });
+    });
+
+    function updateHeaderBadge() {
+        const badge = document.getElementById('headerCartCount');
+        let totalItems = 0;
+        Object.keys(cart).forEach(key => {
+            totalItems += cart[key].qty;
+        });
+        if(badge) badge.textContent = totalItems;
+    }
+
+    const eggTrigger = document.getElementById('easterEggTrigger');
+    const eggModal = document.getElementById('easterEggModal');
+    const closeEgg = document.querySelector('.close-egg');
+    eggTrigger.addEventListener('click', (e) => { e.preventDefault(); eggModal.classList.add('is-open'); });
+    closeEgg.addEventListener('click', () => eggModal.classList.remove('is-open'));
+    eggModal.addEventListener('click', (e) => { if (e.target === eggModal) eggModal.classList.remove('is-open'); });
+</script>
+</body>
+</html>

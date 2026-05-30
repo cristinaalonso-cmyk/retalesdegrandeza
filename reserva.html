@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva | Retales de Grandeza</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Lora:wght@400;500;600&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top-header">
+    <div class="header-content">
+        <div class="logo">
+            <h1>RETALES DE GRANDEZA</h1>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/ccatroxx/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="mailto:info@retalesdegrandeza.com" title="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+    </div>
+</header>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Inicio</a></li>
+            <li><a href="wips.html" class="nav-link">Ilustraciones</a></li>
+            <li><a href="reserva.html" class="nav-link active">Reserva</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main class="reservation-page">
+    <div class="container">
+        <h1 class="page-title">Reserva tu Copia</h1>
+        <p class="page-subtitle">Únete a la historia de Mateo de los Santos</p>
+
+        <div class="reservation-form-container">
+            <div class="form-section">
+                <h2>Información Personal</h2>
+                <form id="reservationForm" action="procesar-reserva.php" method="POST">
+                    <div class="form-group">
+                        <label for="nombre">Nombre Completo *</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="formato">Formato Preferido *</label>
+                        <select id="formato" name="formato" required>
+                            <option value="">Selecciona un formato</option>
+                            <option value="digital">Digital (PDF + EPUB) - €9.99</option>
+                            <option value="tapa-blanda">Tapa Blanda - €19.99</option>
+                            <option value="tapa-dura">Tapa Dura - €29.99</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="checkbox" id="newsletter" name="newsletter">
+                        <label for="newsletter" style="display: inline; margin-left: 0.5rem;">
+                            Quiero recibir actualizaciones sobre el lanzamiento
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="checkbox" id="terminos" name="terminos" required>
+                        <label for="terminos" style="display: inline; margin-left: 0.5rem;">
+                            Acepto los <a href="aviso-legal.html" target="_blank">términos y condiciones</a> *
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 2rem;">
+                        Proceder al Pago
+                    </button>
+                </form>
+            </div>
+
+            <div class="info-section">
+                <h3>¿Qué Incluye?</h3>
+                <ul class="features-list">
+                    <li>✓ Novela completa ilustrada</li>
+                    <li>✓ Arte conceptual exclusivo</li>
+                    <li>✓ Acceso anticipado al lanzamiento</li>
+                    <li>✓ Actualizaciones del autor</li>
+                    <li>✓ Comunidad de lectores</li>
+                </ul>
+
+                <div class="price-info">
+                    <h4>Precios</h4>
+                    <div class="price-item">
+                        <span>Digital</span>
+                        <strong>€9.99</strong>
+                    </div>
+                    <div class="price-item">
+                        <span>Tapa Blanda</span>
+                        <strong>€19.99</strong>
+                    </div>
+                    <div class="price-item">
+                        <span>Tapa Dura</span>
+                        <strong>€29.99</strong>
+                    </div>
+                </div>
+
+                <div class="shipping-info">
+                    <h4>Envío</h4>
+                    <p>✓ Envío gratuito en España peninsular</p>
+                    <p>✓ Entrega en 3-5 días laborables</p>
+                    <p>✓ Seguimiento del pedido incluido</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>RETALES DE GRANDEZA</h4>
+            <p>Una novela ilustrada que transporta al lector al corazón del Siglo de Oro español.</p>
+        </div>
+
+        <div class="footer-section">
+            <h4>Contacto</h4>
+            <a href="mailto:info@retalesdegrandeza.com" class="btn btn-secondary">Envíanos un Mensaje</a>
+        </div>
+
+        <div class="footer-section">
+            <h4>Síguenos</h4>
+            <div class="social-links">
+                <a href="https://www.instagram.com/ccatroxx/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="mailto:info@retalesdegrandeza.com" title="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 Retales de Grandeza. Todos los derechos reservados.</p>
+        <ul class="legal-links">
+            <li><a href="privacidad.html">Política de Privacidad</a></li>
+            <li><a href="aviso-legal.html">Aviso Legal</a></li>
+            <li><a href="cookies.html">Gestionar Cookies</a></li>
+        </ul>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
