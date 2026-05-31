@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="icon" type="image/png" href="fav_icon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corte de tiza y carbón | Galería de Proceso</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .wip2-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 80px);
+            padding: 120px 2rem 4rem 2rem;
+        }
+        .wip2-placeholder img {
+            max-width: 520px;
+            width: 90%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body class="inner-page">
+
+<header class="main-header standalone-header">
+    <div class="header-left">
+        <a href="https://www.instagram.com/ccatroxx/" target="_blank" class="brand-instagram">@ccatroxx</a>
+    </div>
+    <nav class="header-center">
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Inicio</a></li>
+            <li class="dropdown">
+                <a href="#" class="nav-link active">Wips <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="wips.html">Retales de Grandeza</a></li>
+                    <li><a href="wips2.html">Corte de tiza y carbón</a></li>
+                </ul>
+            </li>
+            <li><a href="shop.html" class="nav-link">Tienda</a></li>
+        </ul>
+    </nav>
+    <div class="header-right">
+        <div class="social-links-top">
+            <a href="#" id="easterEggTrigger" title="Secretos de Palacio" style="margin-right: 15px; color: #bcaaa4; transition: transform 0.3s;"><i class="fas fa-key"></i></a>
+            <a href="https://www.instagram.com/ccatroxx/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="mailto:info@retalesdegrandeza.com" title="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+    </div>
+</header>
+
+<main class="wip2-placeholder">
+    <img src="Ilustracio_n3__1_.jpg" alt="Sorry, working on it">
+</main>
+
+<footer class="main-footer">
+    <div class="footer-legal-zone">
+        <p class="copyright-notice">&copy; 2026 Retales de Grandeza. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<div id="easterEggModal" class="egg-modal">
+    <div class="egg-modal-content">
+        <span class="close-egg">&times;</span>
+        <div class="egg-parchment">
+            <div class="baroque-ornament-mini"></div>
+            <h3 class="egg-title">Interceptado en los pasillos de la Corte...</h3>
+            <p class="egg-text">«...Las cartas que cruzan la frontera no mienten. Las sombras se alargan sobre Madrid y los días de esta corte están contados. Se rumorea en los pasillos más oscuros de palacio que un rey extranjero cruzará los Pirineos para reclamar el trono de España. Un nuevo orden está por nacer, y quienes hoy visten seda bien podrían acabar vistiendo ceniza...»</p>
+            <div class="egg-signature">— Un informante anónimo.</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const eggTrigger = document.getElementById('easterEggTrigger');
+    const eggModal = document.getElementById('easterEggModal');
+    const closeEgg = document.querySelector('.close-egg');
+    eggTrigger.addEventListener('click', (e) => { e.preventDefault(); eggModal.classList.add('is-open'); });
+    closeEgg.addEventListener('click', () => eggModal.classList.remove('is-open'));
+    eggModal.addEventListener('click', (e) => { if (e.target === eggModal) eggModal.classList.remove('is-open'); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') eggModal.classList.remove('is-open'); });
+</script>
+</body>
+</html>

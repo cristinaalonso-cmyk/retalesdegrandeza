@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="icon" type="image/png" href="fav_icon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retales de Grandeza | Novela Ilustrada del Siglo de Oro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="main-header">
+    <div class="header-left">
+        <a href="https://www.instagram.com/ccatroxx/" target="_blank" class="brand-instagram">@ccatroxx</a>
+    </div>
+    <nav class="header-center">
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link active">Inicio</a></li>
+            <li class="dropdown">
+                <a href="#" class="nav-link">Wips <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="wips.html">Retales de Grandeza</a></li>
+                    <li><a href="wips2.html">Corte de tiza y carbón</a></li>
+                </ul>
+            </li>
+            <li><a href="shop.html" class="nav-link">Tienda</a></li>
+        </ul>
+    </nav>
+    <div class="header-right">
+        <div class="social-links-top">
+            <a href="#" id="easterEggTrigger" title="Secretos de Palacio" style="margin-right: 15px; color: #bcaaa4; transition: transform 0.3s;"><i class="fas fa-key"></i></a>
+            <a href="https://www.instagram.com/ccatroxx/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="mailto:info@retalesdegrandeza.com" title="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+    </div>
+</header>
+
+<section id="inicio" class="hero-section">
+    <div class="hero-concave-bottom">
+        <div class="baroque-accent-line"></div>
+        <div class="hero-text-content">
+            <h1 class="hero-title">Retales de Grandeza</h1>
+            <p class="hero-tagline">Una historia de ambición y transformación en el corazón del Siglo de Oro español</p>
+            <p class="hero-description">
+                Los sueños, las ambiciones juveniles e incluso las necesidades más primarias del alma pasan inevitablemente a un segundo plano donde solo importa tener un suelo bien amueblado, un techo seguro y una rutina que nos mantenga a salvo del invierno.
+            </p>
+            <div class="hero-button-container" style="margin-top: 0.5rem; width: 100%;">
+                <a href="#reserva" class="btn-baroque-primary">Explorar la Edición</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="galeria" class="gallery-section">
+    <div class="section-title-container">
+        <span class="baroque-ornament-mini"></span>
+        <h2 class="section-title">El Universo Visual</h2>
+        <p class="section-subtitle">Bocetos, concept art y fragmentos pictóricos del proceso creativo</p>
+    </div>
+    <div class="masonry-gallery">
+        <div class="gallery-item size-v-large"><img src="print1.jpg" alt="Art Print Mateo" class="gallery-img"></div>
+        <div class="gallery-item size-horizontal"><img src="print2.jpg" alt="Art Print Paquito" class="gallery-img"></div>
+        <div class="gallery-item"><img src="aun_teneis_tiempo.jpg" alt="Aún tenéis tiempo" class="gallery-img"></div>
+        <div class="gallery-item size-big"><img src="peeking_francisco__1_.jpg" alt="Francisco asomándose" class="gallery-img"></div>
+        <div class="gallery-item"><img src="pastel.jpg" alt="El pastel" class="gallery-img"></div>
+        <div class="gallery-item size-horizontal"><img src="ojos_de_un_artista.jpg" alt="Ojos de un artista" class="gallery-img"></div>
+        <div class="gallery-item size-small"><img src="mantel_tirado.jpg" alt="Mantel tirado" class="gallery-img"></div>
+    </div>
+</section>
+
+<section id="reserva" class="reservation-section">
+    <div class="reservation-container">
+        <div class="product-preview-pane">
+            <div class="book-mockup-wrapper">
+                <img src="mockup_libro_abierto_2.jpg" alt="Edición Especial" class="product-img">
+            </div>
+            <div class="product-meta">
+                <h3>Edición Especial Ilustrada</h3>
+                <p class="product-price">19,99€ <span class="price-tax">incluido IVA</span></p>
+                <ul class="product-specs">
+                    <li><i class="fa-regular fa-bookmark"></i> Encuadernación en tapa dura con detalles en oro</li>
+                    <li><i class="fa-regular fa-image"></i> Más de 40 ilustraciones y concept art a color</li>
+                    <li><i class="fa-regular fa-pen-to-square"></i> Incluye marcapáginas exclusivo firmado por la autora</li>
+                </ul>
+            </div>
+        </div>
+        <div class="form-pane">
+            <div class="form-header-baroque">
+                <h3>Formulario de Reserva</h3>
+                <p>Asegura tu ejemplar de la primera edición limitada</p>
+                <div class="form-title-separator"></div>
+            </div>
+            <form id="orderForm" class="baroque-form" action="checkout.html">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fullName">Nombre completo</label>
+                        <input type="text" id="fullName" required placeholder="Ej. Mateo de los Santos">
+                    </div>
+                </div>
+                <div class="form-row duo">
+                    <div class="form-group">
+                        <label for="emailAddr">Correo electrónico</label>
+                        <input type="email" id="emailAddr" required placeholder="nombre@correo.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phoneNum">Teléfono <span>(Opcional)</span></label>
+                        <input type="tel" id="phoneNum" placeholder="+34 600 000 000">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="shippingAddr">Dirección de envío postal completa</label>
+                        <input type="text" id="shippingAddr" required placeholder="Calle, Número, Piso, Código Postal, Ciudad">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="paymentMethod">Método de pago preferente</label>
+                        <select id="paymentMethod" required>
+                            <option value="" disabled selected>Selecciona una opción...</option>
+                            <option value="bizum">Bizum instante</option>
+                            <option value="card">Tarjeta de Crédito / Débito</option>
+                            <option value="paypal">PayPal Seguro</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn-baroque-submit">Confirmar Solicitud de Reserva</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer class="main-footer">
+    <div class="footer-art-zone">
+        <div class="hand-drawn-icon-box email-icon-box">
+            <a href="mailto:info@retalesdegrandeza.com">
+                <div class="svg-placeholder-icon"><i class="fa-regular fa-envelope"></i></div>
+                <span class="footer-email-text">info@retalesdegrandeza.com</span>
+            </a>
+        </div>
+        <div class="hand-drawn-icon-box social-icon-box">
+            <div class="footer-social-cluster">
+                <a href="https://www.instagram.com/ccatroxx/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-legal-zone">
+        <p class="copyright-notice">&copy; 2026 Retales de Grandeza. Todos los derechos reservados.</p>
+        <ul class="footer-legal-links">
+            <li><a href="aviso-legal.html">Aviso Legal</a></li>
+            <li><a href="privacidad.html">Política de Privacidad</a></li>
+            <li><a href="cookies.html">Gestionar Cookies</a></li>
+        </ul>
+    </div>
+</footer>
+
+<div id="imageModal" class="lightbox-modal">
+    <span class="close-lightbox">&times;</span>
+    <button class="lightbox-btn prev-btn" id="prevBtn">&larr;</button>
+    <div class="lightbox-content-wrapper">
+        <img class="lightbox-image" id="modalImage" src="" alt="">
+        <div class="lightbox-caption" id="modalCaption"></div>
+    </div>
+    <button class="lightbox-btn next-btn" id="nextBtn">&rarr;</button>
+</div>
+
+<div id="cookieBanner" class="cookie-legal-banner">
+    <div class="cookie-legal-container">
+        <p class="cookie-text">
+            Utilizamos cookies propias y de terceros con fines técnicos y analíticos para mejorar la navegación en nuestra web de porfolio de obra. Puedes leer más detalles en nuestra <a href="cookies.html">política de cookies</a>.
+        </p>
+        <div class="cookie-buttons">
+            <button onclick="manageCookies('rejected')" class="btn-cookie-ghost">Rechazar</button>
+            <button onclick="manageCookies('accepted')" class="btn-cookie-accept">Aceptar todas</button>
+        </div>
+    </div>
+</div>
+
+<div id="easterEggModal" class="egg-modal">
+    <div class="egg-modal-content">
+        <span class="close-egg">&times;</span>
+        <div class="egg-parchment">
+            <div class="baroque-ornament-mini"></div>
+            <h3 class="egg-title">Interceptado en los pasillos de la Corte...</h3>
+            <p class="egg-text">«...Las cartas que cruzan la frontera no mienten. Las sombras se alargan sobre Madrid y los días de esta corte están contados. Se rumorea en los pasillos más oscuros de palacio que un rey extranjero cruzará los Pirineos para reclamar el trono de España. Un nuevo orden está por nacer, y quienes hoy visten seda bien podrían acabar vistiendo ceniza...»</p>
+            <div class="egg-signature">— Un informante anónimo.</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentImgIdx = 0;
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const imgElements = document.querySelectorAll('.gallery-img');
+    const modalEl = document.getElementById('imageModal');
+    const modalImgEl = document.getElementById('modalImage');
+    const modalCapEl = document.getElementById('modalCaption');
+    const closeBtn = document.querySelector('.close-lightbox');
+
+    galleryItems.forEach((item, index) => {
+        item.addEventListener('click', () => {
+            currentImgIdx = index;
+            const innerImg = item.querySelector('.gallery-img');
+            updateLightbox(innerImg.src, innerImg.alt);
+            modalEl.classList.add('is-active');
+        });
+    });
+
+    function updateLightbox(src, alt) {
+        modalImgEl.src = src;
+        modalCapEl.textContent = "";
+    }
+
+    closeBtn.addEventListener('click', () => modalEl.classList.remove('is-active'));
+    modalEl.addEventListener('click', (e) => {
+        if (e.target === modalEl) modalEl.classList.remove('is-active');
+    });
+
+    document.getElementById('prevBtn').addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentImgIdx = (currentImgIdx - 1 + galleryItems.length) % galleryItems.length;
+        updateLightbox(imgElements[currentImgIdx].src, imgElements[currentImgIdx].alt);
+    });
+
+    document.getElementById('nextBtn').addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentImgIdx = (currentImgIdx + 1) % galleryItems.length;
+        updateLightbox(imgElements[currentImgIdx].src, imgElements[currentImgIdx].alt);
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+        if (!localStorage.getItem('cookieConsent')) {
+            document.getElementById('cookieBanner').classList.add('show-banner');
+        }
+    });
+
+    function manageCookies(status) {
+        localStorage.setItem('cookieConsent', status);
+        document.getElementById('cookieBanner').classList.remove('show-banner');
+    }
+
+    const eggTrigger = document.getElementById('easterEggTrigger');
+    const eggModal = document.getElementById('easterEggModal');
+    const closeEgg = document.querySelector('.close-egg');
+
+    eggTrigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        eggModal.classList.add('is-open');
+    });
+
+    closeEgg.addEventListener('click', () => {
+        eggModal.classList.remove('is-open');
+    });
+
+    eggModal.addEventListener('click', (e) => {
+        if (e.target === eggModal) eggModal.classList.remove('is-open');
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') eggModal.classList.remove('is-open');
+    });
+</script>
+</body>
+</html>
