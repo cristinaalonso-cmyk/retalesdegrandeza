@@ -1,12 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <link rel="icon" type="image/png" href="fav_icon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Corte de tiza y carbón | Galería de Proceso</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .wip2-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 80px);
+            padding: 120px 2rem 4rem 2rem;
+        }
+        .wip2-placeholder img {
+            max-width: 520px;
+            width: 90%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 <body class="inner-page">
 
@@ -16,9 +33,9 @@
     </div>
     <nav class="header-center">
         <ul class="nav-menu">
-            <li><a href="index.html" class="nav-link active">Inicio</a></li>
+            <li><a href="index.html" class="nav-link">Inicio</a></li>
             <li class="dropdown">
-                <a href="#" class="nav-link">Wips <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+                <a href="#" class="nav-link active">Wips <i class="fas fa-chevron-down dropdown-arrow"></i></a>
                 <ul class="dropdown-menu">
                     <li><a href="wips.html">Retales de Grandeza</a></li>
                     <li><a href="wips2.html">Corte de tiza y carbón</a></li>
@@ -37,23 +54,8 @@
     </div>
 </header>
 
-<main class="wips-page-container" style="padding-top: 120px; padding-bottom: 60px;">
-    <div class="wips-title-section" style="text-align: center; margin-bottom: 40px;">
-        <h1 class="wips-main-title" style="font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: #1a1512;">Corte de tiza y carbón</h1>
-        <div class="baroque-accent-line"></div>
-    </div>
-
-    <section class="gallery-section compact-gallery">
-        <div class="masonry-gallery">
-            <div class="gallery-item size-v-large"><img src="wip-corte1.jpg" alt="Wip" class="gallery-img"></div>
-            <div class="gallery-item size-horizontal"><img src="wip-corte2.jpg" alt="Wip" class="gallery-img"></div>
-            <div class="gallery-item"><img src="wip-corte3.jpg" alt="Wip" class="gallery-img"></div>
-            <div class="gallery-item size-big"><img src="wip-corte4.jpg" alt="Wip" class="gallery-img"></div>
-            <div class="gallery-item"><img src="wip-corte5.jpg" alt="Wip" class="gallery-img"></div>
-            <div class="gallery-item size-horizontal"><img src="wip-corte6.jpg" alt="Wip" class="gallery-img"></div>
-            <div class="gallery-item size-small"><img src="wip-corte7.jpg" alt="Wip" class="gallery-img"></div>
-        </div>
-    </section>
+<main class="wip2-placeholder">
+    <img src="work_in_progress.jpg" alt="Sorry, working on it">
 </main>
 
 <footer class="main-footer">
@@ -78,11 +80,7 @@
     const eggTrigger = document.getElementById('easterEggTrigger');
     const eggModal = document.getElementById('easterEggModal');
     const closeEgg = document.querySelector('.close-egg');
-
-    eggTrigger.addEventListener('click', (e) => {
-        e.preventDefault();
-        eggModal.classList.add('is-open');
-    });
+    eggTrigger.addEventListener('click', (e) => { e.preventDefault(); eggModal.classList.add('is-open'); });
     closeEgg.addEventListener('click', () => eggModal.classList.remove('is-open'));
     eggModal.addEventListener('click', (e) => { if (e.target === eggModal) eggModal.classList.remove('is-open'); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') eggModal.classList.remove('is-open'); });

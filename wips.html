@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <link rel="icon" type="image/png" href="fav_icon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Retales de Grandeza | Galería de Proceso</title>
@@ -16,9 +17,9 @@
     </div>
     <nav class="header-center">
         <ul class="nav-menu">
-            <li><a href="index.html" class="nav-link active">Inicio</a></li>
+            <li><a href="index.html" class="nav-link">Inicio</a></li>
             <li class="dropdown">
-                <a href="#" class="nav-link">Wips <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+                <a href="#" class="nav-link active">Wips <i class="fas fa-chevron-down dropdown-arrow"></i></a>
                 <ul class="dropdown-menu">
                     <li><a href="wips.html">Retales de Grandeza</a></li>
                     <li><a href="wips2.html">Corte de tiza y carbón</a></li>
@@ -37,21 +38,21 @@
     </div>
 </header>
 
-<main class="wips-page-container" style="padding-top: 120px; padding-bottom: 60px;">
-    <div class="wips-title-section" style="text-align: center; margin-bottom: 40px;">
-        <h1 class="wips-main-title" style="font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: #1a1512;">Retales de Grandeza</h1>
+<main class="wips-page-container">
+    <div class="wips-title-section">
+        <h1 class="wips-main-title">Retales de Grandeza</h1>
         <div class="baroque-accent-line"></div>
     </div>
 
     <section class="gallery-section compact-gallery">
         <div class="masonry-gallery">
-            <div class="gallery-item size-v-large"><img src="wip-retales1.jpg" alt="Wip" class="gallery-img"></div>
-            <div class="gallery-item size-horizontal"><img src="wip-retales2.jpg" alt="Wip" class="gallery-img"></div>
-            <div class="gallery-item"><img src="wip-retales3.jpg" alt="Wip" class="gallery-img"></div>
-            <div class="gallery-item size-big"><img src="wip-retales4.jpg" alt="Wip" class="gallery-img"></div>
-            <div class="gallery-item"><img src="wip-retales5.jpg" alt="Wip" class="gallery-img"></div>
-            <div class="gallery-item size-horizontal"><img src="wip-retales6.jpg" alt="Wip" class="gallery-img"></div>
-            <div class="gallery-item size-small"><img src="wip-retales7.jpg" alt="Wip" class="gallery-img"></div>
+            <div class="gallery-item size-v-large"><img src="Mateo__1_.jpg" alt="Mateo y Diego, concept art" class="gallery-img"></div>
+            <div class="gallery-item size-horizontal"><img src="mateoprint.jpg" alt="Print de Mateo" class="gallery-img"></div>
+            <div class="gallery-item"><img src="peeking_francisco.jpg" alt="Francisco asomándose" class="gallery-img"></div>
+            <div class="gallery-item size-big"><img src="diego_.jpg" alt="Diego, concept art" class="gallery-img"></div>
+            <div class="gallery-item"><img src="huevo__1_.jpg" alt="Huevo en sartén" class="gallery-img"></div>
+            <div class="gallery-item size-horizontal"><img src="utensilios_de_cocina.jpg" alt="Utensilios de cocina" class="gallery-img"></div>
+            <div class="gallery-item size-small"><img src="mantel_tirado.jpg" alt="Mantel tirado" class="gallery-img"></div>
         </div>
     </section>
 </main>
@@ -78,11 +79,7 @@
     const eggTrigger = document.getElementById('easterEggTrigger');
     const eggModal = document.getElementById('easterEggModal');
     const closeEgg = document.querySelector('.close-egg');
-
-    eggTrigger.addEventListener('click', (e) => {
-        e.preventDefault();
-        eggModal.classList.add('is-open');
-    });
+    eggTrigger.addEventListener('click', (e) => { e.preventDefault(); eggModal.classList.add('is-open'); });
     closeEgg.addEventListener('click', () => eggModal.classList.remove('is-open'));
     eggModal.addEventListener('click', (e) => { if (e.target === eggModal) eggModal.classList.remove('is-open'); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') eggModal.classList.remove('is-open'); });

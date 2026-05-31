@@ -4,119 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tu Cesta de Compra | Retales de Grandeza</title>
+    <link rel="icon" type="image/png" href="fav_icon.png">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        .cart-page-body {
-            background-color: var(--bg-pergamino);
-            color: var(--color-text-cohesive);
-            font-family: var(--font-serif-body);
-        }
-        .cart-layout-container {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-        .cart-table-card {
-            background: #fff;
-            border: 1px solid rgba(197, 160, 89, 0.2);
-            padding: 25px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            margin-bottom: 30px;
-        }
-        .cart-item-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 20px 0;
-            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
-            gap: 15px;
-        }
-        .cart-item-row:last-child {
-            border-bottom: none;
-        }
-        .cart-prod-thumb {
-            width: 70px;
-            height: 85px;
-            object-fit: cover;
-            border: 1px solid rgba(197, 160, 89, 0.3);
-            background: var(--bg-pergamino);
-        }
-        .cart-prod-details {
-            flex-grow: 1;
-        }
-        .cart-prod-title {
-            font-family: var(--font-serif-classic);
-            font-size: 1.3rem;
-            color: var(--color-baroque-dark);
-            margin: 0 0 5px 0;
-        }
-        .cart-prod-price-each {
-            font-family: var(--font-sans-clean);
-            font-size: 0.85rem;
-            color: var(--color-muted-clay);
-        }
-        .cart-qty-interactive {
-            display: flex;
-            align-items: center;
-            border: 1px solid rgba(197, 160, 89, 0.3);
-        }
-        .cart-qty-btn {
-            background: none;
-            border: none;
-            width: 28px;
-            height: 30px;
-            cursor: pointer;
-            color: var(--color-baroque-dark);
-            font-size: 0.9rem;
-        }
-        .cart-qty-btn:hover {
-            background: var(--bg-cocina-warm);
-        }
-        .cart-qty-val {
-            width: 30px;
-            text-align: center;
-            border: none;
-            font-family: var(--font-sans-clean);
-            font-size: 0.85rem;
-        }
-        .cart-row-total {
-            font-family: var(--font-serif-classic);
-            font-size: 1.3rem;
-            color: var(--color-accent-gold);
-            font-weight: 500;
-            min-width: 80px;
-            text-align: right;
-        }
-        .cart-remove-trash {
-            background: none;
-            border: none;
-            color: #c62828;
-            cursor: pointer;
-            font-size: 1.1rem;
-            transition: transform 0.2s;
-        }
-        .cart-remove-trash:hover {
-            transform: scale(1.15);
-        }
-        .cart-summary-box {
-            background: var(--bg-cocina-warm);
-            border: 1px solid rgba(197, 160, 89, 0.3);
-            padding: 25px;
-            text-align: right;
-        }
-        .cart-grand-total {
-            font-family: var(--font-serif-classic);
-            font-size: 1.8rem;
-            color: var(--color-baroque-dark);
-            margin-bottom: 20px;
-        }
-        .cart-actions-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        .cart-page-body { background-color: var(--bg-pergamino); color: var(--color-text-cohesive); font-family: var(--font-serif-body); }
+        .cart-layout-container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+        .cart-table-card { background: #fff; border: 1px solid rgba(197, 160, 89, 0.2); padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); margin-bottom: 30px; }
+        .cart-item-row { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; border-bottom: 1px solid rgba(197, 160, 89, 0.2); gap: 15px; }
+        .cart-item-row:last-child { border-bottom: none; }
+        .cart-prod-thumb { width: 70px; height: 85px; object-fit: cover; border: 1px solid rgba(197, 160, 89, 0.3); background: var(--bg-pergamino); }
+        .cart-prod-details { flex-grow: 1; }
+        .cart-prod-title { font-family: var(--font-serif-classic); font-size: 1.3rem; color: var(--color-baroque-dark); margin: 0 0 5px 0; }
+        .cart-prod-price-each { font-family: var(--font-sans-clean); font-size: 0.85rem; color: var(--color-muted-clay); }
+        .cart-qty-interactive { display: flex; align-items: center; border: 1px solid rgba(197, 160, 89, 0.3); }
+        .cart-qty-btn { background: none; border: none; width: 28px; height: 30px; cursor: pointer; color: var(--color-baroque-dark); font-size: 0.9rem; }
+        .cart-qty-btn:hover { background: var(--bg-cocina-warm); }
+        .cart-qty-val { width: 30px; text-align: center; border: none; font-family: var(--font-sans-clean); font-size: 0.85rem; }
+        .cart-row-total { font-family: var(--font-serif-classic); font-size: 1.3rem; color: var(--color-accent-gold); font-weight: 500; min-width: 80px; text-align: right; }
+        .cart-remove-trash { background: none; border: none; color: #c62828; cursor: pointer; font-size: 1.1rem; transition: transform 0.2s; }
+        .cart-remove-trash:hover { transform: scale(1.15); }
+        .cart-summary-box { background: var(--bg-cocina-warm); border: 1px solid rgba(197, 160, 89, 0.3); padding: 25px; text-align: right; }
+        .cart-grand-total { font-family: var(--font-serif-classic); font-size: 1.8rem; color: var(--color-baroque-dark); margin-bottom: 20px; }
+        .cart-actions-row { display: flex; justify-content: space-between; align-items: center; }
     </style>
 </head>
 <body class="cart-page-body inner-page">
@@ -146,15 +57,14 @@
     </div>
 </header>
 
-<main class="cart-layout-container">
+<main class="cart-layout-container" style="padding-top: 120px;">
     <div style="text-align: center; margin-bottom: 40px;">
-        <h1 class="shop-title">Tu Bolsa de Compra</h1>
-        <p class="shop-subtitle">Revisa los retales seleccionados antes de pasar por caja</p>
+        <h1 class="shop-title" style="font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: #1E1714; letter-spacing: 3px; font-weight: 300;">Tu Bolsa de Compra</h1>
+        <p style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; color: #A89F91;">Revisa los retales seleccionados antes de pasar por caja</p>
         <div class="baroque-accent-line"></div>
     </div>
 
-    <div class="cart-table-card" id="cartItemsList">
-    </div>
+    <div class="cart-table-card" id="cartItemsList"></div>
 
     <div class="cart-summary-box" id="summaryBox" style="display: none;">
         <div class="cart-grand-total">Total del Pedido: <span id="cartGrandTotalDisplay">0,00€</span></div>
@@ -165,6 +75,12 @@
     </div>
 </main>
 
+<footer class="main-footer">
+    <div class="footer-legal-zone">
+        <p class="copyright-notice">&copy; 2026 Retales de Grandeza. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
 <script>
     let cart = JSON.parse(localStorage.getItem('cart_palacio')) || {};
 
@@ -172,17 +88,11 @@
         const container = document.getElementById('cartItemsList');
         const summaryBox = document.getElementById('summaryBox');
         const totalDisplay = document.getElementById('cartGrandTotalDisplay');
-
         container.innerHTML = '';
         let keys = Object.keys(cart);
 
         if (keys.length === 0) {
-            container.innerHTML = `
-                <div style="text-align: center; padding: 40px 10px;">
-                    <i class="fas fa-shopping-basket" style="font-size: 3rem; color: var(--color-muted-clay); margin-bottom: 15px;"></i>
-                    <p style="font-size: 1.2rem; color: var(--color-muted-clay);">Tu cesta de la compra está vacía.</p>
-                    <a href="shop.html" class="btn-baroque-submit" style="display: inline-block; width: auto; margin-top: 20px; text-decoration: none;">Ir a la Tienda</a>
-                </div>`;
+            container.innerHTML = `<div style="text-align: center; padding: 40px 10px;"><i class="fas fa-shopping-basket" style="font-size: 3rem; color: var(--color-muted-clay); margin-bottom: 15px;"></i><p style="font-size: 1.2rem; color: var(--color-muted-clay);">Tu cesta de la compra está vacía.</p><a href="shop.html" class="btn-baroque-submit" style="display: inline-block; width: auto; margin-top: 20px; text-decoration: none;">Ir a la Tienda</a></div>`;
             summaryBox.style.display = 'none';
             return;
         }
@@ -194,23 +104,9 @@
             const item = cart[key];
             const rowTotal = item.price * item.qty;
             grandTotal += rowTotal;
-
             const row = document.createElement('div');
             row.className = 'cart-item-row';
-            row.innerHTML = `
-                <img src="${item.img || 'mockup-libro.jpg'}" class="cart-prod-thumb" alt="Miniatura">
-                <div class="cart-prod-details">
-                    <h3 class="cart-prod-title">${item.name}</h3>
-                    <div class="cart-prod-price-each">${item.price.toFixed(2)}€ unidad</div>
-                </div>
-                <div class="cart-qty-interactive">
-                    <button class="cart-qty-btn" onclick="alterQty('${key}', -1)">-</button>
-                    <span class="cart-qty-val">${item.qty}</span>
-                    <button class="cart-qty-btn" onclick="alterQty('${key}', 1)">+</button>
-                </div>
-                <div class="cart-row-total">${rowTotal.toFixed(2)}€</div>
-                <button class="cart-remove-trash" onclick="dropItem('${key}')" title="Quitar producto"><i class="fas fa-trash-alt"></i></button>
-            `;
+            row.innerHTML = `<img src="${item.img || 'mockup-libro.jpg'}" class="cart-prod-thumb" alt="Miniatura"><div class="cart-prod-details"><h3 class="cart-prod-title">${item.name}</h3><div class="cart-prod-price-each">${item.price.toFixed(2)}€ unidad</div></div><div class="cart-qty-interactive"><button class="cart-qty-btn" onclick="alterQty('${key}', -1)">-</button><span class="cart-qty-val">${item.qty}</span><button class="cart-qty-btn" onclick="alterQty('${key}', 1)">+</button></div><div class="cart-row-total">${rowTotal.toFixed(2)}€</div><button class="cart-remove-trash" onclick="dropItem('${key}')" title="Quitar producto"><i class="fas fa-trash-alt"></i></button>`;
             container.appendChild(row);
         });
 
@@ -220,9 +116,7 @@
     window.alterQty = function(id, amt) {
         if (!cart[id]) return;
         cart[id].qty += amt;
-        if (cart[id].qty <= 0) {
-            delete cart[id];
-        }
+        if (cart[id].qty <= 0) delete cart[id];
         localStorage.setItem('cart_palacio', JSON.stringify(cart));
         renderCartPage();
     };
@@ -237,4 +131,3 @@
 </script>
 </body>
 </html>
-
